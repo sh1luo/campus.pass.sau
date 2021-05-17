@@ -1,12 +1,32 @@
-<!doctype html>
 <html lang="zh-CN">
 
 <head>
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <!-- <script async src="https://www.googletagmanager.com/gtag/js?id=G-YH8CSFGQ4Q"></script> -->
+  <!-- <script>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+    gtag('js', new Date());
+
+    gtag('config', 'G-YH8CSFGQ4Q');
+
+    gtag('event', 'screen_view', {
+      'app_name': 'saufaker',
+      'screen_name': '进校页'
+    }); -->
+  <!-- </script> -->
   <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>沈阳航空航天大学出入登记</title>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no" />
+  <meta name="csrf-token" content="vXqNKnW2bbvLKBhahgFJNeE4f6ZkUNOzjRP0PGb1">
+  <title>
+    沈阳航空航天大学出入登记
+  </title>
   <link href="./cc.css" rel="stylesheet" type="text/css">
+
   <style>
     @-webkit-keyframes pulse {
       50% {
@@ -39,11 +59,37 @@
     .STYLE2 {
       color: #666666
     }
+
+    input {
+      background-color: transparent;
+      border: none;
+      outline: none;
+      color: inherit;
+      font-weight: inherit;
+      text-align: inherit;
+    }
+
+    p {
+      outline: none;
+    }
+
+    .textInp {
+      width: 100%;
+      color: #fff !important;
+      font-weight: 700 !important;
+      margin: 0;
+      padding: 0;
+    }
+
+    *:disabled {
+      color: white !important;
+      opacity: 1;
+    }
   </style>
+
 </head>
 
 <body>
-
   <div id="app">
     <div class="card border-0 text-center" style="color: #07c160">
       <div class="card-body">
@@ -51,124 +97,127 @@
 
         <i class="animated infinite pulse fa p-4">
           <div class="box">
-            <p contenteditable="true" class="word">114514</p>
-            <img contenteditable="false" id="icon" src="./cc8.png">
+            <p class="editable" contenteditable="true" class="word">806751</p>
+            <img contenteditable="false" ondblclick="disableInp()" src="./cc8.png">
           </div>
         </i>
-        <p id="showtime" class="card-text" style="font-size: 1.4em;">
+        <p id="time-text" class="card-text" ondblclick="getTime()" style="font-size: 1.4em;">
           时间：2020-09-26 15:40:59 </p>
-        <p class="card-text" style="font-size: 1.4em;"> 今日第1次使用进门 </p>
+        <p class="card-text editable" style="font-size: 1.4em;" contenteditable="true">今日第1次使用进门</p>
 
         <p class="card-text" style="font-size: 1.4em;"> </p>
       </div>
     </div>
-
     <ul class="list-group list-group-flush" style="background-color: #07c160">
       <li class="list-group-item bg-transparent d-flex text-white font-weight-bold">
-        <div style="min-width: 4em; text-align-last: justify;">姓名</div>：<div id='xm' contenteditable="true">陈调元</div>
-      </li>
-      <li class="list-group-item bg-transparent d-flex text-white font-weight-bold">
-        <div style="min-width: 4em; text-align-last: justify;">学号</div>：<div id='xh' contenteditable="true">173403060320
+        <div style="min-width: 4em; text-align-last: justify;">
+          姓名
+        </div>
+        ：
+        <div>
+          <input class="textInp" type="text" value="张伟" id="name">
         </div>
       </li>
-
-
-
       <li class="list-group-item bg-transparent d-flex text-white font-weight-bold">
-        <div style="min-width: 4em; text-align-last: justify;">电话</div>：<div id='dh' contenteditable="true">13310448720
+        <div style="min-width: 4em; text-align-last: justify;">
+          学号
+        </div>
+        ：
+        <div>
+          <input class="textInp" type="text" value="173401010101" id="no">
         </div>
       </li>
-
-
       <li class="list-group-item bg-transparent d-flex text-white font-weight-bold">
-        <div style="min-width: 4em; text-align-last: justify;">联&nbsp;&nbsp;系&nbsp;人</div>：<div id='lxr'
-          contenteditable="true">陈调元</div>
+        <div style="min-width: 4em; text-align-last: justify;">
+          体温
+        </div>
+        ：
+        <div>
+          <input class="textInp" type="text" value="36.1">
+        </div>
       </li>
-
+      <li class="list-group-item bg-transparent d-flex text-white font-weight-bold">
+        <div style="min-width: 4em; text-align-last: justify;">
+          电话
+        </div>
+        ：
+        <div>
+          <input class="textInp" type="text" value="13889346130" id="phone">
+        </div>
+      </li>
+      <li class="list-group-item bg-transparent d-flex text-white font-weight-bold">
+        <div style="min-width: 4em; text-align-last: justify;">
+          有效期限
+        </div>
+        ：
+        <div>
+          <input class="textInp" type="text" value="2020-10-01--2020-10-06" id="date-range">
+        </div>
+      </li>
+      <li class="list-group-item bg-transparent d-flex text-white font-weight-bold">
+        <div style="min-width: 4em; text-align-last: justify;">
+          联系人
+        </div>
+        ：
+        <div>
+          <input class="textInp" type="text" value="张伟" id="con-name">
+        </div>
+      </li>
     </ul>
   </div>
   <div class="STYLE1">
-    <div align="center" class="STYLE2">信息网络中心提供相关技术支持</div>
-
+    <div align="center" class="STYLE2">
+      信息网络中心提供相关技术支持
+    </div>
   </div>
-  <p>
-    <img src="./cc2.png">
-  </p>
-  <p>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-  <form name="Costum" onsubmit="return applyForm()" target="posthere">
-    姓名:<br>
-    <input type="text" name="XM" value="巴枯宁">
-    <br>
-    学号:<br>
-    <input type="text" name="SH" value="18140530">
-    <br>
-    电话:<br>
-    <input type="text" name="DH" value="13110447820">
-    <br>
-    状态:<br>
-    <select class="dropdown-select" name="select_ic">
-      <option value="cc8">白底蓝直</option>
-      <option value="cc5">白底绿斜</option>
-      <option value="cc4">白底绿直</option>
-      <option value="cc1">绿底白斜</option>
-      <option value="cc1">绿底白直</option>
-      <option value="ccs">蓝底绿直</option>
-    </select>
-    <br>
-    <br>
-    <input type="submit" value="应用">
-  </form>
-  </div>
-  <iframe name="posthere" frameborder=0 width=0 height=0></iframe>
-  </p>
-
-
   <script>
-    var c_time = new Date();
-    str = '时间：';
-
-    RQ = c_time.getFullYear() + '-';
-    RQ += (((c_time.getMonth() + 1) < 10) ? ('0' + (c_time.getMonth() + 1)) : (c_time.getMonth() + 1)) + '-';
-    RQ += c_time.getDate();
-    str += RQ + ' ';
-    RQ = RQ + '--' + RQ;
-    str += completeDate(c_time.getHours()) + ':' + completeDate(c_time.getMinutes()) + ':' + completeDate(c_time.getSeconds());
-    document.getElementById('showtime').innerHTML = str;
-
-    function applyForm() {
-      var c_time = new Date();
-      str = c_time.getFullYear() + '-';
-      str += c_time.getMonth() + 1 + '-';
-      str += c_time.getDate() + ' ';
-      var XM = document.forms["Costum"]["XM"].value;
-      var SH = document.forms["Costum"]["SH"].value;
-      var DH = document.forms["Costum"]["DH"].value;
-      var LO = document.forms["Costum"]["select_ic"].value;
-
-      document.getElementById('xm').innerHTML = XM;
-      document.getElementById('lxr').innerHTML = XM;
-      document.getElementById('xh').innerHTML = SH;
-      document.getElementById('dh').innerHTML = DH;
-
-      document.getElementById("icon").src = "./img/" + LO + ".png";
-
-      window.scrollTo(0, 0)
-      return;
+    function getTime() {
+      var time = new Date();
+      document.getElementById('time-text').innerHTML = "时间：" + time.getFullYear() + "-" + (time.getMonth() < 10 ?
+        ('0' + (time.getMonth() + 1)) : time.getMonth() + 1) +
+        "-" + (time.getDate() < 10 ? ('0' + time.getDate()) : time.getDate()) + " " + time.toTimeString()
+          .substr(0, 9)
     }
-    function completeDate(value) {
-      return value < 10 ? "0" + value : value;
+    getTime()
+
+    function getDateRange() {
+      var time = new Date();
+      var dateStr = time.getFullYear() + "-" + (time.getMonth() < 10 ?
+        ('0' + (time.getMonth() + 1)) : time.getMonth() + 1) +
+        "-" + (time.getDate() < 10 ? ('0' + time.getDate()) : time.getDate())
+      document.getElementById('date-range').value = dateStr + "--" + dateStr
+    }
+    getDateRange()
+
+    function disableInp() {
+      for (let e of document.getElementsByTagName('input')) {
+        e.disabled = true
+      }
+      for (let e of document.getElementsByClassName('editable')) {
+        e.contentEditable = false
+      }
+    }
+    if (localStorage.getItem("name") != null) {
+      document.getElementById('name').value = localStorage.getItem("name")
+      document.getElementById('con-name').value = localStorage.getItem("name")
+    }
+    if (localStorage.getItem("no") != null) {
+      document.getElementById('no').value = localStorage.getItem("no")
+    }
+    if (localStorage.getItem("phone") != null) {
+      document.getElementById('phone').value = localStorage.getItem("phone")
     }
 
+    document.getElementById('name').onchange = (e) => {
+      console.log("name")
+      localStorage.setItem('name', document.getElementById('name').value)
+    }
+    document.getElementById('no').onchange = (e) => {
+      localStorage.setItem('no', document.getElementById('no').value)
+    }
+    document.getElementById('phone').onchange = (e) => {
+      localStorage.setItem('phone', document.getElementById('phone').value)
+    }
   </script>
 </body>
 
