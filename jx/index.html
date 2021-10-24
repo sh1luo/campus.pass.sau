@@ -94,7 +94,7 @@
         <i class="animated infinite pulse fa p-4">
           <div class="box">
             <p class="editable" contenteditable="true" class="word">806751</p>
-            <img contenteditable="false" ondblclick="disableInp()" src="./cc8.png">
+            <img contenteditable="false" ondblclick="disableInp()" src="https://sauapp.sau.edu.cn/img/cc8.png">
           </div>
         </i>
         <p id="time-text" class="card-text" ondblclick="getTime()" style="font-size: 1.4em;">
@@ -111,7 +111,7 @@
         </div>
         ：
         <div>
-          <input class="textInp" type="text" value="张伟" id="name">
+          <input class="textInp" type="text" value="后约饭" id="name">
         </div>
       </li>
       <li class="list-group-item bg-transparent d-flex text-white font-weight-bold">
@@ -120,7 +120,7 @@
         </div>
         ：
         <div>
-          <input class="textInp" type="text" value="173401010101" id="no">
+          <input class="textInp" type="text" value="183401010101" id="no">
         </div>
       </li>
       <li class="list-group-item bg-transparent d-flex text-white font-weight-bold">
@@ -156,7 +156,7 @@
         </div>
         ：
         <div>
-          <input class="textInp" type="text" value="张伟" id="con-name">
+          <input class="textInp" type="text" value="后约饭" id="con-name">
         </div>
       </li>
     </ul>
@@ -169,7 +169,7 @@
   <script>
     function getTime() {
       var time = new Date();
-      document.getElementById('time-text').innerHTML = "时间：" + time.getFullYear() + "-" + (time.getMonth() < 10 ?
+      document.getElementById('time-text').innerHTML = "时间：" + time.getFullYear() + "-" + (time.getMonth() < 9 ?
         ('0' + (time.getMonth() + 1)) : time.getMonth() + 1) +
         "-" + (time.getDate() < 10 ? ('0' + time.getDate()) : time.getDate()) + " " + time.toTimeString()
           .substr(0, 9)
@@ -178,7 +178,7 @@
 
     function getDateRange() {
       var time = new Date();
-      var dateStr = time.getFullYear() + "-" + (time.getMonth() < 10 ?
+      var dateStr = time.getFullYear() + "-" + (time.getMonth() < 9 ?
         ('0' + (time.getMonth() + 1)) : time.getMonth() + 1) +
         "-" + (time.getDate() < 10 ? ('0' + time.getDate()) : time.getDate())
       document.getElementById('date-range').value = dateStr + "--" + dateStr

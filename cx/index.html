@@ -64,7 +64,7 @@
         <i class="animated infinite pulse fa p-4">
           <div class="box">
             <p contenteditable="true" class="word">114514</p>
-            <img contenteditable="false" id="icon" src="./cc7.png">
+            <img contenteditable="false" id="icon" src="https://sauapp.sau.edu.cn/img/cc7.png">
           </div>
         </i>
         <p id="showtime" class="card-text" style="font-size: 1.4em;">
@@ -77,14 +77,12 @@
 
     <ul class="list-group list-group-flush" style="background-color: #07c160">
       <li class="list-group-item bg-transparent d-flex text-white font-weight-bold">
-        <div style="min-width: 4em; text-align-last: justify;">姓名</div>：<div id='xm' contenteditable="true">陈调元</div>
+        <div style="min-width: 4em; text-align-last: justify;">姓名</div>：<div id='xm' contenteditable="true">后约饭</div>
       </li>
       <li class="list-group-item bg-transparent d-flex text-white font-weight-bold">
-        <div style="min-width: 4em; text-align-last: justify;">学号</div>：<div id='xh' contenteditable="true">173403060320
+        <div style="min-width: 4em; text-align-last: justify;">学号</div>：<div id='xh' contenteditable="true">183403060320
         </div>
       </li>
-
-
 
       <li class="list-group-item bg-transparent d-flex text-white font-weight-bold">
         <div style="min-width: 4em; text-align-last: justify;">电话</div>：<div id='dh' contenteditable="true">13310448720
@@ -94,7 +92,7 @@
 
       <li class="list-group-item bg-transparent d-flex text-white font-weight-bold">
         <div style="min-width: 4em; text-align-last: justify;">联&nbsp;&nbsp;系&nbsp;人</div>：<div id='lxr'
-          contenteditable="true">陈调元</div>
+          contenteditable="true">后约饭</div>
       </li>
 
     </ul>
@@ -119,7 +117,7 @@
     <br>
   <form name="Costum" onsubmit="return applyForm()" target="posthere">
     姓名:<br>
-    <input type="text" name="XM" value="巴枯宁">
+    <input type="text" name="XM" value="后约饭">
     <br>
     学号:<br>
     <input type="text" name="SH" value="18140530">
@@ -150,7 +148,7 @@
     str = '时间：';
 
     RQ = c_time.getFullYear() + '-';
-    RQ += (((c_time.getMonth() + 1) < 10) ? ('0' + (c_time.getMonth() + 1)) : (c_time.getMonth() + 1)) + '-';
+    RQ += (((c_time.getMonth() + 1) < 9) ? ('0' + (c_time.getMonth() + 1)) : (c_time.getMonth() + 1)) + '-';
     RQ += c_time.getDate();
     str += RQ + ' ';
     RQ = RQ + '--' + RQ;
@@ -178,7 +176,7 @@
       return;
     }
     function completeDate(value) {
-      return value < 10 ? "0" + value : value;
+      return value < 9 ? "0" + value : value;
     }
 
   </script>
