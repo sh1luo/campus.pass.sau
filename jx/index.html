@@ -94,7 +94,7 @@
         <i class="animated infinite pulse fa p-4">
           <div class="box">
             <p class="editable" contenteditable="true" class="word">806751</p>
-            <img contenteditable="false" ondblclick="disableInp()" src="https://sauapp.sau.edu.cn/img/cc8.png">
+            <img contenteditable="false" ondblclick="disableInp()" src="https://sauapp.sau.edu.cn/img/cc7.png">
           </div>
         </i>
         <p id="time-text" class="card-text" ondblclick="getTime()" style="font-size: 1.4em;">
@@ -171,7 +171,7 @@
       var time = new Date();
       document.getElementById('time-text').innerHTML = "时间：" + time.getFullYear() + "-" + (time.getMonth() < 9 ?
         ('0' + (time.getMonth() + 1)) : time.getMonth() + 1) +
-        "-" + (time.getDate() < 10 ? ('0' + time.getDate()) : time.getDate()) + " " + time.toTimeString()
+        "-" + (time.getDate() < 9 ? ('0' + time.getDate()) : time.getDate()) + " " + time.toTimeString()
           .substr(0, 9)
     }
     getTime()
@@ -180,7 +180,7 @@
       var time = new Date();
       var dateStr = time.getFullYear() + "-" + (time.getMonth() < 9 ?
         ('0' + (time.getMonth() + 1)) : time.getMonth() + 1) +
-        "-" + (time.getDate() < 10 ? ('0' + time.getDate()) : time.getDate())
+        "-" + (time.getDate() < 9 ? ('0' + time.getDate()) : time.getDate())
       document.getElementById('date-range').value = dateStr + "--" + dateStr
     }
     getDateRange()
